@@ -1,1 +1,1 @@
-This is a  file.
+This folder contains Final Submission and Individual submission for the group.
