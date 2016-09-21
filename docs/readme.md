@@ -1,1 +1,1 @@
-Folder containing files from different users.
+This is a  file.
