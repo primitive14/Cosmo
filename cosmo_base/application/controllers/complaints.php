@@ -1,16 +1,13 @@
 <?php
 class Complaints extends CI_Controller{
 
-  public function index(){
+  public function index()
+  {
 
     $data['title'] = 'Complaint Database';
     $this -> load -> model('complaint');
 
     $data['complaints'] = $this -> complaint -> GetTicketsC();
-
-    $this -> load -> view ('templates/header', $data);
-    $this -> load -> view ('complaints/index', $data);
-    $this -> load -> view ('templates/footer', $data);
 
   }
 
@@ -25,12 +22,6 @@ class Complaints extends CI_Controller{
     }
 
     $data['title'] = $data['complaint_item']['ticket_no'];
-
-    $this -> load -> view ('templates/header', $data);
-    $this -> load -> view ('complaints/view', $data);
-    $this -> load -> view ('templates/footer');
-
-
   }
 
   public function createticket(){
@@ -39,50 +30,43 @@ class Complaints extends CI_Controller{
     $this->load->helper('url');
 
       $data['title'] = 'Create new ticket';
-    if(isset($_SESSION['is_loggedin'])&& $_SESSION['is_loggedin'])
-    {
-      if ($_POST)
+      if(isset($_SESSION['is_loggedin'])&& $_SESSION['is_loggedin'])
       {
-        // Insert Complaint.
-         // Generating ticket number.
-        $TktNo = $_SESSION['userID'];
-        $TktNo .= $this -> input -> post('complaint_id');
-        $TktNo .= date('His', time());
-
-        $complaintData = array(
-          $TktNo,
-          $this -> input -> post('complaint_id'),
-          $this -> input -> post('comment'),
-          1,
-          date('y-m-d', time()),
-          date('H:i:s'),
-          NULL,
-          NULL,
-          $_SESSION['userID']
-        );
-
-        $this -> load -> model('complaint');
-        $val = $this -> complaint -> insert_ticket($complaintData);
-        if ($val['error'] == false)
+        if ($_POST)
         {
-          redirect (base_url() . 'complaints');
-        }
+          $TktNo = $_SESSION['userID'];
+          $TktNo .= $this -> input -> post('complaint_id');
+          $TktNo .= date('His', time());
 
-        else
-        {
-          $this -> load -> helper('form');
-          $data ['title'] = 'Complaint';
-          $data ['message'] = $val ['error_message'];
+          $complaintData = array(
+            $TktNo,
+            $this -> input -> post('complaint_id'),
+            $this -> input -> post('comment'),
+            1,
+            date('y-m-d', time()),
+            date('H:i:s'),
+            NULL,
+            NULL,
+            $_SESSION['userID']
+          );
 
-          $this -> load -> view ('templates/header', $data);
-          $this -> load -> view ('complaints/createticket');
-          $this -> load -> view ('templates/footer');
+          $this -> load -> model('complaint');
+          $val = $this -> complaint -> insert_ticket($complaintData);
+          if ($val['error'] == false)
+          {
+            redirect (base_url() . 'complaints');
+          }
 
-        }
+          else
+          {
+            $this -> load -> helper('form');
+            $data ['title'] = 'Complaint';
+            $data ['message'] = $val ['error_message'];
+
+          }
     }
     else
     {
-      // Load form
       $this -> load -> view ('templates/header', $data);
       $this -> load -> view ('complaints/createticket', $data);
       $this -> load -> view ('templates/footer');
