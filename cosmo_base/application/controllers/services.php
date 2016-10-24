@@ -1,5 +1,5 @@
 <?php
-class Services_model extends CI_Controller
+class Services extends CI_Controller
 {
 
   public function index()

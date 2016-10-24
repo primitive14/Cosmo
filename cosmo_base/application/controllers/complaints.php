@@ -1,5 +1,5 @@
 <?php
-class Complaint_model extends CI_Controller{
+class Complaints extends CI_Controller{
 
   public function index()
   {
