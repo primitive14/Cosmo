@@ -61,5 +61,12 @@ class Login extends CI_Controller
                }
           }
      }
+     function logout ()
+     {
+        $data['title'] = 'logged out';
+        $this -> session -> sess_destroy();
+
+        redirect (base_url());
+     }
 }
 ?>
