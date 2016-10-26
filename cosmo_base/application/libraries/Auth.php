@@ -15,11 +15,19 @@ class Auth
 
     function check_login()
     {
-      if($_SESSION['loginuser'] == TRUE)
+      if(isset($this->session->userdata('loginuser')) && $this->session->userdata('loginuser') == TRUE)
       {
         return 1;
       }
         return 0;
+
+
+
+/*      if(isset($_SESSION['loginuser']) && $_SESSION['loginuser'] == TRUE)
+      {
+        return 1;
+      }
+        return 0;*/
     }
 
 }
