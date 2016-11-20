@@ -3,31 +3,25 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Auth
 {
-    public function __construct()
-    {
-      //parent::__construct();
-      $CI =& get_instance();
-      $CI->load->helper('url');
-      $CI->load->library('session');
-      $CI->config->item('base_url');
-// etc.
-    }
-
     function check_login()
     {
-      if(isset($this->session->userdata('loginuser')) && $this->session->userdata('loginuser') == TRUE)
+      if(isset($_SESSION['is_loggedin']) && $_SESSION['is_loggedin'] == TRUE)
       {
         return 1;
       }
         return 0;
+    }
 
-
-
-/*      if(isset($_SESSION['loginuser']) && $_SESSION['loginuser'] == TRUE)
+    function check_isadmin()
+    {
+      if(isset($_SESSION['is_loggedin']) && $_SESSION['is_loggedin'] == TRUE)
       {
-        return 1;
+        if(isset($_SESSION['u_status']) && $_SESSION['u_status'] == 1)
+        {
+            return 1;
+        }
+            return 0;
       }
-        return 0;*/
     }
 
 }

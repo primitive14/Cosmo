@@ -5,13 +5,14 @@ class login_model extends CI_Model
      function __construct()
      {
           parent::__construct();
+          $this->load->database();
      }
 
-     function get_user($usr, $pwd)
+     function get_user($usr, $password)
      {
-          $sql = "select * from user where c_ph = '" . $usr . "' and c_pwd = '" . md5($pwd) . "' ";
+          $sql = "select * from user where pno = '" . $usr . "' and password = '" . md5($password) . "' ";
           $query = $this->db->query($sql);
-          return $query->num_rows();
+          return $query -> first_row('array');
      }
    }
 ?>

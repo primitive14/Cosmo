@@ -1,51 +1,51 @@
 <?php
+if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Complaint_model extends CI_Model{
-
-  public function __construct()
+class Complaint_model extends CI_Model
+{
+  function __construct()
   {
-    $this->load->database();
+       parent::__construct();
+       $this->load->database();
   }
 
-  public function GetTicketsC($TktNo=NULL){
-      if($TktNo==NULL){
-        $query=$this->db->get('ts2');
-        return $query->result_array();
+  function createTicket($h_no,$type,$dscrip,$status)
+  {
+      $dump = array (
+      'h_no' => $h_no,
+      'type' => $type,
+      'description' => $dscrip,
+      'status' => $status
+      );
+
+      if($this->db->insert('complaint',$dump))
+      {
+        return 1;
       }
-      $query=$this-> db ->get_where('ts2', array('ticket_no' => $TktNo));
-      return $query->row_array();
+        return 0;
   }
-  function insert_ticket($complaintData)
+  function updateTicket($status,$c_id)
   {
-    $sqlQuery = "INSERT INTO ts2 VALUES (";
-    $i = 0;
-    foreach ($complaintData as $val)
-    {
-      if ($i != 0)
-        $sqlQuery .= ',';
+    $dump= array(
+      'c_id' => $c_id,
+      'status' => $status
+    );
 
-      if ($i == 1 || $i == 3)
-        $sqlQuery .= $val;
-      else
-        $sqlQuery .= "'" . $val . "'";
-
-      ++$i;
-    }
-    $sqlQuery .= ');';
-
-    if (!$this->db->query($sqlQuery))
+    if($this->db->replace('complaint',$dump))
     {
-      $error = $this -> db -> error();
-      $val = array('error' => TRUE, 'error_message' => $error['message']);
-      return $val;
+      return 1;
     }
-    else
-    {
-      $val = array ('error' => FALSE);
-      return $val;
-    }
+      return 0;
   }
 
+  function viewComplaint($c_id)
+  {
+    if($this->db->get_where('complaint', array('c_id' => $c_id)))
+    {
+      return $query->row_array();
+    }
+      return NULL;
 
+  }
 }
 ?>

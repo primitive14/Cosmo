@@ -8,19 +8,15 @@ class Login extends CI_Controller
      public function __construct()
      {
           parent::__construct();
-          $this->load->library('session');
-          $this->load->helper('form');
-          $this->load->helper('url');
-          $this->load->helper('html');
-          $this->load->database();
-          $this->load->library('form_validation');
           $this->load->model('login_model');
      }
 
      public function index()
      {
+       if(!$this->auth->check_login())
+       {
           //get the posted values
-          $username = $this->input->post("txt_username");
+          $pno = $this->input->post("txt_username");
           $password = $this->input->post("txt_password");
 
 
@@ -29,20 +25,23 @@ class Login extends CI_Controller
 
           if ($this->form_validation->run() == FALSE)
           {
-               $this->load->view('login_view');
+               $this->load->view('user/login_view');
           }
 
           else
           {
                if ($this->input->post('btn_login') == "Login")
                {
-                    $usr_result = $this->login_model->get_user($username, $password);
-
-                    if ($usr_result > 0)
+                    $usr_result = $this->login_model->get_user($pno, $password);
+                    
+                    if ($usr_result)
                     {
                          $sessiondata = array(
-                              'username' => $username,
-                              'loginuser' => TRUE,
+                              'pno' => $usr_result['pno'],
+                              'u_status'=>$usr_result['status'],
+                              'is_loggedin' => TRUE,
+                              'h_no' => $usr_result['h_no']
+
                          );
 
                          $this->session->set_userdata($sessiondata);
@@ -60,6 +59,9 @@ class Login extends CI_Controller
                     redirect('login/index');
                }
           }
+        }else{
+              redirect(base_url());
+        }
      }
      function logout ()
      {
