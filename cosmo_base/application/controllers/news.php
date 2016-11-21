@@ -53,18 +53,48 @@ class News extends CI_Controller
   }
   public function editNews()
   {
+    if($this->auth->check_login() && $this->auth->check_isadmin())
+    {
+      $n_id=$this->input->post('n_id');
+      $title=$this->input->post('title');
+      $subject=$this->input->post('subject');
+      $news=$this->input->post('news');
+
+      if($this->input->post('btn_news') == "Update")
+      {
+        $result=$this->news_model->editNews($title,$subject,$news);
+
+        if($result)
+        {
+          $this->session->set_flashdata('msg','News Updated');
+          redirect('news/viewNews/'.$n_id);
+        }else{
+          $this->session->set_flashdata('msg','News Update Failed');
+          redirect('news/viewNews/'.$n_id);
+        }
+      }else {
+        echo "error";
+      }
+    }else {
+      redirect('login/index');
+    }
 
   }
   public function viewNews($n_id = NULL)
   {
-    $result = $this->news_model->get_news_id($n_id);
-    if (empty($result))
+    if($this->auth->check_login() && $this->auth->check_isadmin())
     {
-            show_404();
-    }
+      $result = $this->news_model->get_news_id($n_id);
+      if (empty($result))
+      {
+              show_404();
+      }
 
-    $data['vn'] = $result;
-    $this->load->view('module/news_view', $data);
+      $data['vn'] = $result;
+      $this->load->view('module/news_edit', $data);
+    }else{
+      redirect('login/index');
+    }
   }
 
 
