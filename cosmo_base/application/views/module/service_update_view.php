@@ -30,21 +30,21 @@
           <div class="col-md-6 col-md-offset-3 well">
 
           <?php
-            $attributes = array("class" => "form-horizontal", "id" => "complaintform", "name" => "complaintform");
-            echo form_open("complaint/updateTicket", $attributes);
+            $attributes = array("class" => "form-horizontal", "id" => "serviceform", "name" => "serviceform");
+            echo form_open("service/updateTicket", $attributes);
           ?>
 
           <fieldset>
-               <legend>Complaint System</legend>
+               <legend>Service System</legend>
 
                <div class="form-group">
                <div class="row colbox">
                <div class="col-lg-4 col-sm-4">
-                    <label for="c_id" class="control-label">Complaint ID</label>
+                    <label for="s_id" class="control-label">Service ID</label>
                </div>
                <div class="col-lg-8 col-sm-8">
-                    <input class="form-control" id="c_id" name="c_id"  type="text" value="<?php echo $vc['c_id']; ?>"/>
-                    <span class="text-danger"><?php //echo form_error('c_id'); ?></span>
+                    <input class="form-control" id="s_id" name="s_id"  type="text" value="<?php echo $vc['s_id']; ?>"/>
+                    <span class="text-danger"><?php //echo form_error('s_id'); ?></span>
                </div>
                </div>
                </div>
@@ -68,7 +68,7 @@
                </div>
                <div class="col-lg-8 col-sm-8">
                     <input class="form-control" id="status" name="status"  type="text" value="<?php echo $vc['status']; ?>"/>
-                    <span class="text-danger"><?php //echo form_error('c_id'); ?></span>
+                    <span class="text-danger"><?php //echo form_error('s_id'); ?></span>
                </div>
                </div>
                </div>
@@ -76,7 +76,7 @@
 
                <div class="form-group">
                <div class="col-lg-12 col-sm-12 text-center">
-                    <input id="btn_Ucomplaint" name="btn_Ucomplaint" type="submit" class="btn btn-default" value="Complaint" />
+                    <input id="btn_Uservice" name="btn_Uservice" type="submit" class="btn btn-default" value="Service" />
                </div>
                </div>
           </fieldset>

@@ -27,11 +27,13 @@ class Complaint_model extends CI_Model
   function updateTicket($status,$c_id)
   {
     $dump= array(
-      'c_id' => $c_id,
       'status' => $status
     );
 
-    if($this->db->replace('complaint',$dump))
+    $this->db->where('c_id', $c_id);
+    $query=$this->db->update('complaint', $dump);
+
+    if($query)
     {
       return 1;
     }
@@ -40,12 +42,8 @@ class Complaint_model extends CI_Model
 
   function viewComplaint($c_id)
   {
-    if($this->db->get_where('complaint', array('c_id' => $c_id)))
-    {
-      return $query->row_array();
-    }
-      return NULL;
-
+                  $query = $this->db->get_where('complaint', array('c_id' => $c_id));
+                  return $query->row_array();
   }
 }
 ?>

@@ -22,4 +22,9 @@ class news_model extends CI_Model
        }
          return 0;
      }
+     function get_news($n_id)
+     {
+       $query = $this->db->get_where('news', array('n_id' => $n_id));
+       return $query->row_array();
+     }
 }

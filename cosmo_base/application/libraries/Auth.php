@@ -14,14 +14,12 @@ class Auth
 
     function check_isadmin()
     {
-      if(isset($_SESSION['is_loggedin']) && $_SESSION['is_loggedin'] == TRUE)
-      {
         if(isset($_SESSION['u_status']) && $_SESSION['u_status'] == 1)
         {
             return 1;
         }
             return 0;
-      }
+
     }
 
 }

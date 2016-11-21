@@ -11,7 +11,7 @@ class Register extends CI_Controller
 
   public function index()
   {
-    if(!$this->auth->check_login() && !$this->auth->check_isadmin())
+    if($this->auth->check_login() && $this->auth->check_isadmin())
     {
        $h_no= $this->input->post('h_no');
        $fname=$this->input->post('fname');
@@ -44,7 +44,7 @@ class Register extends CI_Controller
                 $this->session->set_flashdata('msg','<div class="alert alert-danger text-center">Registered</div>');
                 $this->load->view('user/register_view');
             }
-            
+
           }
        }
      }else{

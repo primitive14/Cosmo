@@ -48,7 +48,7 @@ class Complaint extends CI_Controller
 
   public function updateTicket()
   {
-    if($this->auth->check_login && $this->auth->check_isadmin())
+    if($this->auth->check_login() && $this->auth->check_isadmin())
     {
         $status= $this->input->post('status');
         $c_id= $this->input->post('c_id');
@@ -63,24 +63,26 @@ class Complaint extends CI_Controller
 
         else
         {
-          if($this->input->post('btn_Ucomplaint') == "U_Complaint")
+          if($this->input->post('btn_Ucomplaint') == "Complaint")
           {
             $result=$this->complaint_model->updateTicket($status,$c_id);
 
             if($result)
             {
               $this->session->set_flashdata('msg','Complaint Updated');
-              $this->load->view('module/complaint_update_view');
+              redirect('complaint/viewComplaint/'.$c_id);
             }
           }
           else
           {
-
+            $this->session->set_flashdata('msg','Complaint Update Failed');
+            redirect('complaint/viewComplaint/'.$c_id);
           }
         }
     }else{
       redirect('login/index');
     }
+
   }
   public function viewComplaint($c_id  = NULL)
   {
@@ -93,6 +95,9 @@ class Complaint extends CI_Controller
       }
       $data['vc']=$result;
       $this->load->view('module/complaint_update_view',$data);
+    }else {
+      $this->session->set_flashdata('msg','Something Went Wrong');
+      redirect('complaint/viewComplaint/'.$c_id);
     }
   }
 

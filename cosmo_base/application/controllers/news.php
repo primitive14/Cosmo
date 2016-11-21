@@ -55,6 +55,17 @@ class News extends CI_Controller
   {
 
   }
+  public function viewNews($n_id = NULL)
+  {
+    $result = $this->news_model->get_news($slug);
+    if (empty($data['news_item']))
+    {
+            show_404();
+    }
+
+    $data['vn'] = $result;
+    $this->load->view('module/news_view', $data);
+  }
 
 
 }
