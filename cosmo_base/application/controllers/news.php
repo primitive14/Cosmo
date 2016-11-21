@@ -57,8 +57,8 @@ class News extends CI_Controller
   }
   public function viewNews($n_id = NULL)
   {
-    $result = $this->news_model->get_news($slug);
-    if (empty($data['news_item']))
+    $result = $this->news_model->get_news_id($n_id);
+    if (empty($result))
     {
             show_404();
     }
