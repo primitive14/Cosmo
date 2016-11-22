@@ -34,14 +34,20 @@
   <div class="login-box-body">
     <p class="login-box-msg">Sign in to start your session</p>
 
-    <form action="../../index2.html" method="post">
+
+          <?php
+            $attributes = array("class" => "form-horizontal", "id" => "loginform", "name" => "loginform");
+            echo form_open("login/index", $attributes);
+          ?>
       <div class="form-group has-feedback">
-        <input type="phone number" class="form-control" placeholder="Phone number">
+        <input type="phone number" class="form-control" id="txt_username" name="txt_username" placeholder="Phone Number" type="text" value="<?php echo set_value('txt_username'); ?>">
         <span class="fa fa-mobile form-control-feedback"></span>
+        <span class="text-danger"><?php echo form_error('txt_username'); ?></span>
       </div>
       <div class="form-group has-feedback">
-        <input type="password" class="form-control" placeholder="Password">
+        <input type="password" class="form-control" id="txt_password" name="txt_password" placeholder="Password" type="password" value="<?php echo set_value('txt_password'); ?>">
         <span class="fa fa-lock form-control-feedback"></span>
+        <span class="text-danger"><?php echo form_error('txt_password'); ?></span>
       </div>
       <div class="row">
         <div class="col-xs-8">
@@ -53,7 +59,7 @@
         </div>
         <!-- /.col -->
         <div class="col-xs-4">
-          <button type="submit" class="btn btn-primary btn-block btn-flat">Login</button>
+          <button type="submit" name="btn_login" type="submit" value ="Login" class="btn btn-primary btn-block btn-flat">Login</button>
         </div>
         <!-- /.col -->
       </div>
@@ -69,7 +75,7 @@
      /.social-auth-links -->
 
     <!--<a href="#">I forgot my password</a><br> -->
-    <a href="register.html" class="text-center"><u>Register <u> </a>
+    <a href="" class="text-center"><u>Register <u> </a>
 
   </div>
   <!-- /.login-box-body -->
