@@ -1,61 +1,87 @@
-
 <!DOCTYPE html>
 <html>
 <head>
-    <?php include 'assests/menu/nav.php' ?>
+  <?php include 'assests/menu/nav.php' ?>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
-
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        News
+        <small>Write the news that you want to submit</small>
+      </h1>
+      
+    </section>
+
+    <!-- Main content -->
     <section class="content">
-      <div class="login-box">
-        <div class="login-logo">
-          <a href="../../index2.html"><b>COSMO</b></a>
-        </div>
-        <!-- /.login-logo -->
-        <div class="login-box-body">
-          <p class="login-box-msg">Request Service here</p>
 
-          <form action="../../index2.html" method="post">
-            <div class="form-group has-feedback">
-              <label>
-                Type
-              </label>
-              <select class="form-control select2" style="width: 100%;">
+      <!-- Default box -->
+      <div class="box">
+        <div class="box-header with-border">
+          <div class="form-group">
+            <label>Heading</label>
+            <input type="text" class="form-control" placeholder="Enter ...">
+          </div>
+          <div class="form-group">
+            <label>Subject</label>
+            <input type="text" class="form-control" placeholder="Enter ...">
+          </div>
 
-                <option selected="selected">General</option>
-                <option>Electrician</option>
-                <option>Plumber</option>
-                <option>Carpenter</option>
-                  </select>
-            </div>
-            <div class="form-group has-feedback">
-              <label>Description</label>
-              <textarea class="textarea" placeholder="Description of service" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
-    </div>
-            <div class="row">
-              <div class="col-xs-8">
-
+          <div class="form-group">
+              <label>News</label>
+              <div class="box">
+                <div class="box-header">
+                    <small>Choose your words wisely</small>
+                  </h3>
+                  <!-- tools box -->
+                                    </div>
+                  <!-- /. tools -->
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body pad">
+                  <form>
+                    <textarea class="textarea" placeholder="Place some text here" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+                  </form>
+                </div>
               </div>
-              <!-- /.col -->
-              <div class="col-xs-4">
-                <button type="submit" class="btn btn-primary btn-block btn-flat">Submit</button>
-              </div>
-              <!-- /.col -->
             </div>
-          </form>
+            <!-- /.col-->
+          </div>
+          <!-- ./row -->
+        </section>
+        <!-- /.content -->
+        <div style="padding-left:45%">
 
+          <button type="submit" class="btn btn-primary">Submit</button>
 
+</div>
+<br>
+<!--
+      <div class="box-body">
+          Start creating your amazing application!
         </div>
-        <!-- /.login-box-body -->
-
+        <! /.box-body >
+        <div class="box-footer">
+          Footer
+        </div>
+        <! /.box-footer>
+      </div>
+      <! /.box >
 
     </section>
-    <!-- /.content -->
+    <! /.content >
   </div>
-  <!-- /.content-wrapper -->
-
+  <! /.content-wrapper -->
+  <footer class="main-footer">
+    <div class="pull-right hidden-xs">
+      <b>Version</b> 2.3.7
+    </div>
+    <strong>Copyright &copy; 2014-2016 <a href="http://almsaeedstudio.com">Almsaeed Studio</a>.</strong> All rights
+    reserved.
+  </footer>
 
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
@@ -252,7 +278,5 @@
        immediately after the control sidebar -->
   <div class="control-sidebar-bg"></div>
 </div>
-<!-- ./wrapper -->
-
 </body>
 </html>
