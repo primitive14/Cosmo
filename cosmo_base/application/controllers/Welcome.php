@@ -27,9 +27,5 @@ class Welcome extends CI_Controller
 			redirect('login/index');
 		}
 	}
-	/*public function index()
-	{
-		$this->load->view('module/dashboard_view2');
-	}*/
 }
 ?>
