@@ -104,7 +104,7 @@ class service extends CI_Controller
   {
     if($this->auth->check_login())
     {
-      $result=$this->complaint_model->get_service();
+      $result=$this->service_model->get_service();
       if(empty($result))
       {
         show_404();
