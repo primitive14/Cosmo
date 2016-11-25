@@ -17,34 +17,38 @@
         <div class="login-box-body">
           <p class="login-box-msg">Log your complaint here</p>
 
-          <form action="../../index2.html" method="post">
+          <?php
+            $attributes = array("class" => "form-horizontal", "id" => "complaintform", "name" => "complaintform");
+            echo form_open("complaint/createTicket", $attributes);
+          ?>
             <div class="form-group has-feedback">
               <label>
                 Type
               </label>
               <select class="form-control select2" style="width: 100%;">
-
-                <option selected="selected">House Complaint</option>
-                <option>Floor Complaint</option>
-                <option>Building Complaint</option>
-                <option>Society Complaint</option>
-                  </select>
+                <option selected="selected" name="type" id="type" >Select Type of Complaint</option>
+                <option name="type" id="type">Floor Complaint</option>
+                <option name="type" id="type">Building Complaint</option>
+                <option name="type" id="type">Society Complaint</option>
+              </select>
+              <span class="text-danger"><?php echo form_error('type'); ?></span>
             </div>
             <div class="form-group has-feedback">
               <label>Description</label>
-              <textarea class="textarea" placeholder="Description of complaint" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
-    </div>
+              <textarea class="textarea" placeholder="Description of complaint" id="dscrip" name="dscrip" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+            </div>
             <div class="row">
               <div class="col-xs-8">
 
               </div>
               <!-- /.col -->
               <div class="col-xs-4">
-                <button type="submit" class="btn btn-primary btn-block btn-flat">Submit</button>
+                <button type="submit" id="btn_complaint" name="btn_complaint" class="btn btn-primary btn-block btn-flat" value="Complaint">Submit</button>
               </div>
               <!-- /.col -->
             </div>
-          </form>
+            <?php echo form_close(); ?>
+           <?php echo $this->session->flashdata('msg'); ?>
 
 
         </div>

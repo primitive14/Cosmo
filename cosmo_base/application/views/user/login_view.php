@@ -63,7 +63,9 @@
         </div>
         <!-- /.col -->
       </div>
-    </form>
+
+      <?php echo form_close(); ?>
+      <?php echo $this->session->flashdata('msg'); ?>
 
   <!--  <div class="social-auth-links text-center">
       <p>- OR -</p>
