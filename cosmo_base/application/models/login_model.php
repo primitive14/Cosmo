@@ -10,6 +10,7 @@ class login_model extends CI_Model
 
      function get_user($usr, $password)
      {
+
           $sql = "select * from user where pno = '" . $usr . "' and password = '" . md5($password) . "' ";
           $query = $this->db->query($sql);
           return $query -> first_row('array');

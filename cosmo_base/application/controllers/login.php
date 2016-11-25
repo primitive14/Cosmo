@@ -9,6 +9,7 @@ class Login extends CI_Controller
      {
           parent::__construct();
           $this->load->model('login_model');
+
      }
 
      public function index()
@@ -33,7 +34,7 @@ class Login extends CI_Controller
                if ($this->input->post('btn_login') == "Login")
                {
                     $usr_result = $this->login_model->get_user($pno, $password);
-                    
+
                     if ($usr_result)
                     {
                          $sessiondata = array(
