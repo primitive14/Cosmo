@@ -8,7 +8,23 @@ class Complaint extends CI_Controller
        parent::__construct();
        $this->load->model('complaint_model');
   }
+  function index()
+  {
+    if($this->auth->check_login() && $this->auth->check_isadmin())
+    {
+      $result=$this->complaint_model->get_complaint();
 
+      if($result)
+      {
+        $data['complaint']=$result;
+        $this->load->view('module/complaint_list',$data);
+      }else {
+        echo "No Complaint,So no Work";
+      }
+    }else {
+      redirect('login/index');
+    }
+  }
   function createTicket()
   {
      if($this->auth->check_login())
@@ -98,6 +114,21 @@ class Complaint extends CI_Controller
     }else {
       $this->session->set_flashdata('msg','Something Went Wrong');
       redirect('complaint/viewComplaint/'.$c_id);
+    }
+  }
+  public function viewEComplaint($c_id  = NULL)
+  {
+    if($this->auth->check_login())
+    {
+      $result=$this->complaint_model->get_complaint();
+      if(empty($result))
+      {
+        show_404();
+      }
+      $data['complaint']=$result;
+      $this->load->view('module/complaint_list',$data);
+    }else {
+      echo "error";
     }
   }
 

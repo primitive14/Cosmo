@@ -1,16 +1,35 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Welcome extends CI_Controller {
+class Welcome extends CI_Controller
+{
+	public function __construct()
+	{
+			 parent::__construct();
+			 $this->load->model('news_model');
+	}
 
 	public function index()
 	{
-		$this->load->library('unit_test');
-		$test = 1 + 1;
-		$expected_result = 2;
-		$test_name = 'Adds one plus one';
-		$this->unit->run($test, $expected_result, $test_name);
-		$this->load->view('test/test_report');
+		if($this->auth->check_login())
+		{
+			$result=$this->news_model->get_news();
+
+			if($result)
+			{
+				$data['news']=$result;
+				$this->load->view('module/dashboard_view',$data);
+			}else{
+				echo "error";
+			}
+		}
+		else {
+			redirect('login/index');
+		}
 	}
+	/*public function index()
+	{
+		$this->load->view('module/dashboard_view2');
+	}*/
 }
 ?>

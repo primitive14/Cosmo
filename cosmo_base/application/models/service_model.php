@@ -45,5 +45,16 @@ class service_model extends CI_Model
                   $query = $this->db->get_where('service', array('s_id' => $s_id));
                   return $query->row_array();
   }
+  function get_service()
+  {
+    $status=0;
+    $query = $this->db->get_where('service',array('status' => $status));
+    return $query->result_array();
+  }
+  function get_complaint_id($c_id)
+  {
+    $query = $this->db->get_where('service', array('s_id' => $s_id));
+    return $query->row_array();
+  }
 }
 ?>

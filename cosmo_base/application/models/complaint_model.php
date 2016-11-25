@@ -45,5 +45,17 @@ class Complaint_model extends CI_Model
                   $query = $this->db->get_where('complaint', array('c_id' => $c_id));
                   return $query->row_array();
   }
+
+  function get_complaint()
+  {
+    $status=0;
+    $query = $this->db->get_where('complaint',array('status' => $status));
+    return $query->result_array();
+  }
+  function get_complaint_id($c_id)
+  {
+    $query = $this->db->get_where('news', array('c_id' => $c_id));
+    return $query->row_array();
+  }
 }
 ?>
