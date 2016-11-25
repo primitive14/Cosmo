@@ -67,7 +67,7 @@
 
 <div class="box">
   <div class="box-header with-border">
-    <h3 class="box-title">News</h3>
+    <h3 class="box-title">Complaints</h3>
   </div>
   <div class="box-body">
     <ul class="products-list product-list-in-box">

@@ -8,6 +8,15 @@ class News extends CI_Controller
        parent::__construct();
        $this->load->model('news_model');
   }
+/*  public function index()
+  {
+    if()
+    {
+
+    }else {
+      redirect('login/index');
+    }
+  }*/
 
   public function createNews()
   {
