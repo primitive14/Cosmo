@@ -100,6 +100,21 @@ class service extends CI_Controller
     }
   }
 
+  public function viewEComplaint($s_id  = NULL)
+  {
+    if($this->auth->check_login())
+    {
+      $result=$this->complaint_model->get_service();
+      if(empty($result))
+      {
+        show_404();
+      }
+      $data['service']=$result;
+      $this->load->view('module/service_list',$data);
+    }else {
+      echo "error";
+    }
+  }
 
 }
 
