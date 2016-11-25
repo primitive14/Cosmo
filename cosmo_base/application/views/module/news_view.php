@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,17 +5,13 @@
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 
-  <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
       <section class="content-header">
-
-      <!-- Main content -->
-      <section class="content">
         <h1>
           <?php echo $vn['title']; ?>
         </h1>
-        <!-- Default box -->
+      </section>
+      <section class="content">
         <div class="box">
           <div class="box-header with-border">
             <h3 class="box-title"><?php echo $vn['subject']; ?></h3>
@@ -25,6 +20,8 @@
             <?php echo $vn['news']; ?>
           </div>
         </div>
+      </section>
+  </div>
 
 </body>
 </html>

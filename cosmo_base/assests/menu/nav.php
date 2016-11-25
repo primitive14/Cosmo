@@ -94,17 +94,6 @@ desired effect
               </li>
               <!-- Menu Body -->
               <li class="user-body">
-                <div class="row">
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Followers</a>
-                  </div>
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Sales</a>
-                  </div>
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Friends</a>
-                  </div>
-                </div>
                 <!-- /.row -->
               </li>
               <!-- Menu Footer-->
@@ -166,52 +155,14 @@ desired effect
     <!-- /.sidebar -->
   </aside>
 
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-  <!-- Control Sidebar -->
-
-    <!-- Tab panes -->
-    <div class="tab-content">
-
-      <!-- Stats tab content -->
-      <div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div>
-
-      <!-- Settings tab content -->
-      <div class="tab-pane" id="control-sidebar-settings-tab">
-        <form method="post">
-          <h3 class="control-sidebar-heading">General Settings</h3>
-
-          <div class="form-group">
-            <label class="control-sidebar-subheading">
-              Report panel usage
-              <input type="checkbox" class="pull-right" checked>
-            </label>
-
-            <p>
-              Some information about this general settings option
-            </p>
-          </div>
-          <!-- /.form-group -->
-        </form>
-      </div>
-      <!-- /.tab-pane -->
-    </div>
-  </aside>
-  <!-- /.control-sidebar -->
-  <!-- Add the sidebar's background. This div must be placed
-       immediately after the control sidebar -->
-  <div class="control-sidebar-bg"></div>
-</div>
-<!-- ./wrapper -->
-
 <!-- REQUIRED JS SCRIPTS -->
 
 <!-- jQuery 2.2.3 -->
-<script src="assests/plugins/jQuery/jquery-2.2.3.min.js"></script>
+<script src="<?php echo base_url().'assests/plugins/jQuery/jquery-2.2.3.min.js';?>"></script>
 <!-- Bootstrap 3.3.6 -->
-<script src="assests/bootstrap/js/bootstrap.min.js"></script>
+<script src="<?php echo base_url().'assests/bootstrap/js/bootstrap.min.js';?>"></script>
 <!-- AdminLTE App -->
-<script src="assests/dist/js/app.min.js"></script>
+<script src="<?php echo base_url().'assests/dist/js/app.min.js';?>"></script>
 
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
      Both of these plugins are recommended to enhance the
