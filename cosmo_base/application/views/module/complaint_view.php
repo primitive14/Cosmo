@@ -25,11 +25,11 @@
               <label>
                 Type
               </label>
-              <select class="form-control select2" style="width: 100%;">
-                <option selected="selected" name="type" id="type" >Select Type of Complaint</option>
-                <option name="type" id="type" value="Floor Complaint">Floor Complaint</option>
-                <option name="type" id="type" value="Building Complaint">Building Complaint</option>
-                <option name="type" id="type" value="Society Complaint">Society Complaint</option>
+              <select class="form-control select2" name='type' style="width: 100%;">
+                <option>Select Type of Complaint</option>
+                <option value="Floor Complaint">Floor Complaint</option>
+                <option value="Building Complaint">Building Complaint</option>
+                <option value="Society Complaint">Society Complaint</option>
               </select>
               <span class="text-danger"><?php echo form_error('type'); ?></span>
             </div>

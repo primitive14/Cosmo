@@ -22,18 +22,17 @@
               <label>
                 Type
               </label>
-              <select class="form-control select2" style="width: 100%;">
-
-                <option selected="selected">General</option>
-                <option>Electrician</option>
-                <option>Plumber</option>
-                <option>Carpenter</option>
-                  </select>
+              <select class="form-control select2" name='type' style="width: 100%;">
+                <option value="General">General</option>
+                <option value="Electrician">Electrician</option>
+                <option value="Plumber">Plumber</option>
+                <option value="Carpenter">Carpenter</option>
+              </select>
             </div>
             <div class="form-group has-feedback">
               <label>Description</label>
               <textarea class="textarea" placeholder="Description of service" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
-    </div>
+            </div>
             <div class="row">
               <div class="col-xs-8">
 
