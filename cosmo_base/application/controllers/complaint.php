@@ -118,7 +118,7 @@ class Complaint extends CI_Controller
   }
   public function viewEComplaint($c_id  = NULL)
   {
-    if($this->auth->check_login())
+    if($this->auth->check_login() && $this->auth->check_isadmin())
     {
       $result=$this->complaint_model->get_complaint();
       if(empty($result))
@@ -131,6 +131,44 @@ class Complaint extends CI_Controller
       echo "error";
     }
   }
+  public function viewComplaintUserList()
+  {
+    if($this->auth->check_login())
+    {
+      $h_no = $this->session->h_no;
+      $result=$this->complaint_model->get_complaint_user($h_no);
+      if($result)
+      {
+        $data['complaint_user_list']=$result;
+        $this->load->view('module/complaint_user_list',$data);
+      }else {
+        $data['complaint_user_list']='No Complaints Logged For the Moment';
+        $this->load->view('module/complaint_user_list',$data);
+      }
+    }else {
+      redirect('login/index');
+    }
+  }
+    public function viewComplaintUser($c_id = NULL)
+    {
+      if($this->auth->check_login())
+      {
+        $result = $this->complaint_model->viewComplaint($c_id);
+        if($result)
+        {
+          $data['complaint_detail']=$result;
+          $this->load->view('module/complaint_view_detail',$data);
+        }else{
+          $data['complaint_detail']='No Such Complaint Number Exist';
+          $this->load->view('module/complaint_view_detail',$data);
+        }
+      }else {
+        redirect('login/index');
+      }
+    }
+
+
+
 
 }
 ?>

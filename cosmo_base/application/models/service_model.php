@@ -42,8 +42,8 @@ class service_model extends CI_Model
 
   function viewService($s_id)
   {
-                  $query = $this->db->get_where('service', array('s_id' => $s_id));
-                  return $query->row_array();
+      $query = $this->db->get_where('service', array('s_id' => $s_id));
+      return $query->row_array();
   }
   function get_service()
   {
@@ -51,10 +51,16 @@ class service_model extends CI_Model
     $query = $this->db->get_where('service',array('status' => $status));
     return $query->result_array();
   }
-  function get_complaint_id($c_id)
+  function get_service_id($s_id)
   {
     $query = $this->db->get_where('service', array('s_id' => $s_id));
     return $query->row_array();
+  }
+  function get_service_user($h_no)
+  {
+    $status=0;
+    $query = $this->db->get_where('service',array('status' => $status, 'h_no' => $h_no));
+    return $query->result_array();
   }
 }
 ?>

@@ -115,6 +115,42 @@ class service extends CI_Controller
       echo "error";
     }
   }
+  public function viewComplaintUserList()
+  {
+    if($this->auth->check_login())
+    {
+      $h_no = $this->session->h_no;
+      $result=$this->service_model->get_service_user($h_no);
+      if($result)
+      {
+        $data['service_user_list']=$result;
+        $this->load->view('module/service_user_list',$data);
+      }else {
+        $data['complaint_user_list']='No Service Logged For the Moment';
+        $this->load->view('module/service_user_list',$data);
+      }
+    }else {
+      redirect('login/index');
+    }
+  }
+    public function viewComplaintUser($c_id = NULL)
+    {
+      if($this->auth->check_login())
+      {
+        $result = $this->service_model->viewComplaint($c_id);
+        if($result)
+        {
+          $data['service_detail']=$result;
+          $this->load->view('module/service_view_detail',$data);
+        }else{
+          $data['service_detail']='No Such Service Number Exist';
+          $this->load->view('module/service_view_detail',$data);
+        }
+      }else {
+        redirect('login/index');
+      }
+    }
+
 
 }
 

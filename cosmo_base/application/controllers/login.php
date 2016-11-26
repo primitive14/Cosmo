@@ -41,8 +41,11 @@ class Login extends CI_Controller
                               'pno' => $usr_result['pno'],
                               'u_status'=>$usr_result['status'],
                               'is_loggedin' => TRUE,
-                              'h_no' => $usr_result['h_no']
-
+                              'h_no' => $usr_result['h_no'],
+                              'fname'=>$usr_result['fname'],
+                              'lname'=>$usr_result['lname'],
+                              'date'=>$usr_result['date'],
+                              'u_id'=>$user_result['u_id']
                          );
 
                          $this->session->set_userdata($sessiondata);
