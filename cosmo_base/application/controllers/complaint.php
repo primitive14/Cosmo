@@ -128,7 +128,7 @@ class Complaint extends CI_Controller
       $data['complaint']=$result;
       $this->load->view('module/complaint_list',$data);
     }else {
-      echo "error";
+      echo "error No Complaints to Display";
     }
   }
   public function viewComplaintUserList()
@@ -166,9 +166,5 @@ class Complaint extends CI_Controller
         redirect('login/index');
       }
     }
-
-
-
-
 }
 ?>

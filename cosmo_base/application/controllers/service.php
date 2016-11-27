@@ -102,7 +102,7 @@ class service extends CI_Controller
 
   public function viewEComplaint($s_id  = NULL)
   {
-    if($this->auth->check_login())
+    if($this->auth->check_login() && $this->auth->check_isadmin())
     {
       $result=$this->service_model->get_service();
       if(empty($result))

@@ -8,15 +8,26 @@ class News extends CI_Controller
        parent::__construct();
        $this->load->model('news_model');
   }
-/*  public function index()
+  public function index()
   {
-    if()
+    if($this->auth->check_login())
     {
+      $result=$this->news_model->get_news();
 
-    }else {
+      if($result)
+      {
+        $data['news']=$result;
+        $this->load->view('module/news_view_list',$data);
+      }else{
+        echo "error No news avaiable to display";
+      }
+    }
+    else {
       redirect('login/index');
     }
-  }*/
+  }
+
+
 
   public function createNews()
   {

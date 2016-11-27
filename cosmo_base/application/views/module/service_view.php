@@ -17,7 +17,11 @@
         <div class="login-box-body">
           <p class="login-box-msg">Request Service here</p>
 
-          <form action="../../index2.html" method="post">
+          <?php
+            $attributes = array("class" => "form-horizontal", "id" => "serviceform", "name" => "serviceform");
+            echo form_open("service/createTicket", $attributes);
+          ?>
+
             <div class="form-group has-feedback">
               <label>
                 Type
@@ -31,7 +35,7 @@
             </div>
             <div class="form-group has-feedback">
               <label>Description</label>
-              <textarea class="textarea" placeholder="Description of service" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+              <textarea name="dscrip" class="textarea" placeholder="Description of service" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
             </div>
             <div class="row">
               <div class="col-xs-8">
@@ -39,11 +43,13 @@
               </div>
               <!-- /.col -->
               <div class="col-xs-4">
-                <button type="submit" class="btn btn-primary btn-block btn-flat">Submit</button>
+                <button type="submit" id="btn_service" name="btn_service" class="btn btn-primary btn-block btn-flat" value="service">Submit</button>
               </div>
               <!-- /.col -->
             </div>
-          </form>
+            <?php echo form_close(); ?>
+           <?php echo $this->session->flashdata('msg'); ?>
+
 
 
         </div>

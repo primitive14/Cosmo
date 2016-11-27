@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <?php include 'assests/menu/adminnav.php' ?>
+  <?php include 'assests/menu/nav.php' ?>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 
@@ -67,16 +67,16 @@
 
 <div class="box">
   <div class="box-header with-border">
-    <h3 class="box-title">Complaints</h3>
+    <h3 class="box-title">News</h3>
   </div>
   <div class="box-body">
     <ul class="products-list product-list-in-box">
 
-      <?php foreach ($complaint as $complaint_item): ?>
+      <?php foreach ($news as $news_item): ?>
                 <!-- timeline time label -->
               <?php echo '<li class="item">';?>
-              <?php echo '<a href="'?><?php echo base_url().'index.php/news/viewEComplaint/'.$complaint_item['c_id'];?><?php echo '" class="product-title">'?><?php echo $complaint_item['c_id']; ?>
-                <?php echo'<span class="label label-success pull-right">';?> <?php echo $complaint_item['date']; ?><?php echo'</span></a>';?>
+              <?php echo '<a href="'?><?php echo base_url().'index.php/news/viewENews/'.$news_item['n_id'];?><?php echo '" class="product-title">'?><?php echo $news_item['title']; ?>
+                <?php echo'<span class="label label-success pull-right">';?> <?php echo $news_item['date']; ?><?php echo'</span></a>';?>
               <?php echo '</li>'; ?>
                 <?php endforeach; ?>
     </ul>
