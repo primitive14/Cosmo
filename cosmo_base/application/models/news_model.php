@@ -22,6 +22,22 @@ class news_model extends CI_Model
        }
          return 0;
      }
+     function editNews($title,$subject,$news,$n_id)
+     {
+       $dump= array (
+         'title'=> $title,
+         'subject'=>$subject,
+         'news' => $news
+       );
+       $this->db->where('n_id', $n_id);
+       $query=$this->db->update('news', $dump);
+
+       if($query)
+       {
+         return 1;
+       }
+         return 0;
+     }
      function get_news()
      {
        $query = $this->db->get('news');

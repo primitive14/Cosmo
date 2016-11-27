@@ -63,11 +63,14 @@
         <!-- /.content -->
         <div style="padding-left:45%">
 
-          <button id="btn_news" name="btn_news" type="submit" class="btn btn-primary" value="News">Submit</button>
+          <button id="btn_news" name="btn_news" type="submit" class="btn btn-primary" value="Update">Submit</button>
 
 </div>
 <?php echo form_close(); ?>
-<?php echo $this->session->flashdata('msg'); ?>
+<?php
+  if(isset($error))
+  echo $error;
+ ?>
 
 <br>
 <!--

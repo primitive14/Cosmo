@@ -131,6 +131,7 @@ class Complaint extends CI_Controller
       echo "error No Complaints to Display";
     }
   }
+  
   public function viewComplaintUserList()
   {
     if($this->auth->check_login())

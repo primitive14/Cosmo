@@ -22,7 +22,7 @@
       <?php foreach ($complaint as $complaint_item): ?>
                 <!-- timeline time label -->
               <?php echo '<li class="item">';?>
-              <?php echo '<a href="'?><?php echo base_url().'index.php/news/viewEComplaint/'.$complaint_item['c_id'];?><?php echo '" class="product-title">'?><?php echo $complaint_item['c_id']; ?>
+              <?php echo '<a href="'?><?php echo base_url().'index.php/complaint/viewComplaint/'.$complaint_item['c_id'];?><?php echo '" class="product-title">'?><?php echo $complaint_item['c_id']; ?>
                 <?php echo'<span class="label label-success pull-right">';?> <?php echo $complaint_item['date']; ?><?php echo'</span></a>';?>
               <?php echo '</li>'; ?>
                 <?php endforeach; ?>
