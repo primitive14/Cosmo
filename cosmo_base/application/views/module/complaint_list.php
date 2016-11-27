@@ -11,59 +11,6 @@
 
     <!-- Main content -->
     <section class="content">
-      <!-- Small boxes (Stat box) -->
-      <div class="row">
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-aqua">
-            <div class="inner">
-              <h4>Profile</h4>
-
-            </div>
-            <div class="icon">
-              <i></i>
-            </div>
-            </div>
-        </div>
-        <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
-          <div class="small-box bg-green">
-            <div class="inner">
-              <h4>Complaints</h4>
-            </div>
-            <div class="icon">
-              <i></i>
-            </div>
-            </div>
-        </div>
-        <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-yellow">
-            <div class="inner">
-              <h4>Services</h4>
-
-
-            </div>
-            <div class="icon">
-              <i></i>
-            </div>
-
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-purple">
-            <div class="inner">
-            <h4>Visitors</h4>
-
-          </div>
-        <!-- ./col -->
-      </div>
- </div>
-
-</div>
 
 <div class="box">
   <div class="box-header with-border">
@@ -83,6 +30,6 @@
   </div>
 
   </div>
-
+</div>
 </body>
 </html>
