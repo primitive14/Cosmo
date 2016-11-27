@@ -79,14 +79,14 @@ desired effect
             <!-- Menu Toggle Button -->
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <!-- The user image in the navbar-->
-              <img src="<?php echo base_url().'dist/img/user2-160x160.jpg';?>" class="user-image" alt="User Image">
+              <img src="<?php echo base_url().'assests/dist/img/user2-160x160.jpg';?>" class="user-image" alt="User Image">
               <!-- hidden-xs hides the username on small devices so only the image appears. -->
               <span class="hidden-xs"><?php echo $this->session->fname;?> <?php echo $this->session->lname; ?></span>
             </a>
             <ul class="dropdown-menu">
               <!-- The user image in the menu -->
               <li class="user-header">
-                <img src="<?php echo base_url().'dist/img/user2-160x160.jpg';?>" class="img-circle" alt="User Image">
+                <img src="<?php echo base_url().'assests/dist/img/user2-160x160.jpg';?>" class="img-circle" alt="User Image">
                 <p>
                   <?php echo $this->session->fname;?> <?php echo $this->session->lname; ?>
                   <small>Member since <?php echo $this->session->date;?></small>
@@ -128,7 +128,7 @@ desired effect
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="<?php echo base_url().'dist/img/user2-160x160.jpg';?>" class="img-circle" alt="User Image">
+          <img src="<?php echo base_url().'assests/dist/img/user2-160x160.jpg';?>" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
           <p><?php echo $this->session->fname;?> <?php echo $this->session->lname;?></p>

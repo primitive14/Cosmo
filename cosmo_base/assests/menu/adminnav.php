@@ -163,7 +163,7 @@ desired effect
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="<?php echo base_url().'index.php/service/viewECommplaint';?>">Booked Service's</a></li>
+            <li><a href="<?php echo base_url().'index.php/service/viewEComplaint';?>">Booked Service's</a></li>
           </ul>
         </li>
         <li class="treeview">
@@ -173,10 +173,11 @@ desired effect
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="<?php echo base_url().'index.php/news/';?>">Add News</a></li>
-            <li><a href="<?php echo base_url().'index.php/news/';?>">Edit News</a></li>
+            <li><a href="<?php echo base_url().'index.php/news/createNews';?>">Add News</a></li>
+            <li><a href="<?php echo base_url().'index.php/news/viewNewsAdmin';?>">Edit News</a></li>
           </ul>
         </li>
+        <li><a href="<?php echo base_url().'index.php/register';?>"><i class="fa fa-link"></i>Register New House</a></li>
       </ul>
 
       <!-- /.sidebar-menu -->

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <?php include 'assests/menu/nav.php' ?>
+  <?php include 'assests/menu/adminnav.php' ?>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
   <!-- Content Wrapper. Contains page content -->

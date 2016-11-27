@@ -29,7 +29,7 @@
         <div class="col-lg-3 col-xs-6">
           <div class="small-box bg-green">
             <div class="inner">
-              <h4>Service</h4>
+              <h4>Complaints</h4>
             </div>
             <div class="icon">
               <i></i>
@@ -67,16 +67,18 @@
 
 <div class="box">
   <div class="box-header with-border">
-    <h3 class="box-title">Services</h3>
+    <h3 class="box-title">News</h3>
   </div>
   <div class="box-body">
     <ul class="products-list product-list-in-box">
 
-      <?php foreach ($service as $service_item): ?>
+      <?php foreach ($news as $news_item): ?>
                 <!-- timeline time label -->
               <?php echo '<li class="item">';?>
-              <?php echo '<a href="'?><?php echo base_url().'index.php/news/viewEService/'.$service_item['s_id'];?><?php echo '" class="product-title">'?><?php echo $service_item['s_id']; ?>
-                <?php echo'<span class="label label-success pull-right">';?> <?php echo $service_item['date']; ?><?php echo'</span></a>';?>
+              <?php echo '<a href="'?><?php echo base_url().'index.php/news/viewENews/'.$news_item['n_id'];?><?php echo '" class="product-title">'?><?php echo $news_item['title']; ?>
+
+                <?php echo'<span class="label label-primary pull-right">';?> <?php echo $news_item['date']; ?><?php echo'</span></a>';?>
+                <?php echo '<span class="label pull-right"><a href="';?><?php echo base_url().'index.php/news/viewNews/'.$news_item['n_id'];?><?php echo'" jhclass="btn btn-default"><i class="fa fa-edit"></i> Edit</a></span>';?>
               <?php echo '</li>'; ?>
                 <?php endforeach; ?>
     </ul>
