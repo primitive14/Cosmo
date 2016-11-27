@@ -19,12 +19,12 @@
           <!-- small box -->
           <div class="small-box bg-aqua">
             <div class="inner">
-              <h3>150</h3>
+              <h3>10</h3>
 
               <p>New Complaints</p>
             </div>
             <div class="icon">
-              <i class="ion ion-bag"></i>
+              <i class="ion ion-thumbsdown"></i>
             </div>
             <a href="<?php echo base_url().'index.php/complaint/viewEComplaint';?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
@@ -36,7 +36,7 @@
             <div class="inner">
               <h3>53<sup style="font-size: 20px">%</sup></h3>
 
-              <p>Complaint and Service Record Rate</p>
+              <p>Service/Complaint Rate</p>
             </div>
             <div class="icon">
               <i class="ion ion-stats-bars"></i>
@@ -49,7 +49,7 @@
           <!-- small box -->
           <div class="small-box bg-yellow">
             <div class="inner">
-              <h3>44</h3>
+              <h3>35</h3>
 
               <p>User Registrations</p>
             </div>
@@ -64,12 +64,12 @@
           <!-- small box -->
           <div class="small-box bg-red">
             <div class="inner">
-              <h3>65</h3>
+              <h3>13</h3>
 
               <p>Unique Visitors</p>
             </div>
             <div class="icon">
-              <i class="ion ion-pie-graph"></i>
+              <i class="ion ion-man"></i>
             </div>
             <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
@@ -136,7 +136,7 @@
                   <div class="description-block border-right">
                     <span class="description-percentage text-green"><i class="fa fa-caret-up"></i> 10%</span>
                     <h5 class="description-header">$0</h5>
-                    <span class="description-text">TOTAL REVENU</span>
+                    <span class="description-text">TOTAL REVENUE</span>
                   </div>
                   <!-- /.description-block -->
                 </div>
@@ -181,22 +181,15 @@
     </section>
 </div>
 
-<div class="row">
-<section class="col-lg-7 connectedSortable">
-    <!-- quick email widget -->
-    <div>
-          <div class="box box-info">
-            <div class="box-header">
-              <i class="fa fa-envelope"></i>
-
-              <h3 class="box-title">Quick News Post</h3>
-              <!-- tools box -->
-              <div class="pull-right box-tools">
-                <button type="button" class="btn btn-info btn-sm" data-widget="remove" data-toggle="tooltip" title="Remove">
-                  <i class="fa fa-times"></i></button>
-              </div>
-              <!-- /. tools -->
-            </div>
+<div>
+    <section class="content">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="box">
+            <div class="box-header with-border">
+               <i class="fa fa-envelope"></i>
+               <h3 class="box-title">Quick News Post</h3>
+              
             <div class="box-body">
               <form action="#" method="post">
                 <div class="form-group">
@@ -216,27 +209,7 @@
             </div>
           </div>
 </section>
-    <!-- solid sales graph -->
-    <section class="col-lg-5 connectedSortable">
-      <div class="box box-solid bg-teal-gradient">
-        <div class="box-header">
-          <i class="fa fa-th"></i>
-
-          <h3 class="box-title">Usage Graph</h3>
-
-          <div class="box-tools pull-right">
-            <button type="button" class="btn bg-teal btn-sm" data-widget="collapse"><i class="fa fa-minus"></i>
-            </button>
-            <button type="button" class="btn bg-teal btn-sm" data-widget="remove"><i class="fa fa-times"></i>
-            </button>
-          </div>
-        </div>
-        <div class="box-body border-radius-none">
-          <div class="chart" id="line-chart" style="height: 250px;"></div>
-        </div>
-        <!-- /.box-body -->
-      </section>
-    </div>
+  </div>
 </div>
 
 </body>

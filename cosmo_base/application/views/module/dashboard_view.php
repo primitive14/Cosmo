@@ -9,46 +9,76 @@
   <div class="content-wrapper">
     <section class="content">
       <div class="row">
-        <div class="col-lg-3 col-xs-6">
-          <div class="small-box bg-aqua">
-            <div class="inner">
-              <h4>Profile</h4>
-            </div>
-            <div class="icon">
-              <i></i>
-            </div>
-            </div>
-        </div>
-        <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
-          <div class="small-box bg-green">
-            <div class="inner">
-              <h4>Complaints</h4>
-            </div>
-            <div class="icon">
-              <i></i>
-            </div>
-            </div>
-        </div>
+        <section class="content">
+              <div class="row">
 
-        <div class="col-lg-3 col-xs-6">
-          <div class="small-box bg-yellow">
-            <div class="inner">
-              <h4>Services</h4>
-            </div>
-            <div class="icon">
-              <i></i>
-            </div>
-          </div>
-        </div>
+                <div class="col-lg-3 col-xs-6">
+                  <!-- small box -->
+                  <div class="small-box bg-aqua">
+                    <div class="inner">
+                      <div style='text-align:left'><h2>User<br>Profile</h2>
+                        </div>
+                    </div>
+                    <div class="icon">
+                      <i class="ion ion-happy"></i>
+                    </div>
+                    <a href="#" class="small-box-footer">Update Profile <i class="fa fa-arrow-circle-right"></i></a>
+                  </div>
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-3 col-xs-6">
+                  <!-- small box -->
+                  <div class="small-box bg-green">
+                    <div class="inner">
+                      <div style='text-align:left'><h2>Service<br>System</h2>
 
-        <div class="col-lg-3 col-xs-6">
-          <div class="small-box bg-purple">
-            <div class="inner">
-            <h4>Visitors</h4>
-            </div>
-          </div>
-        </div>
+                      </div>
+
+
+                    </div>
+                    <div class="icon">
+                      <i class="ion ion-chatbubble-working"></i>
+                    </div>
+                    <a href="#" class="small-box-footer">Book a Service <i class="fa fa-arrow-circle-right"></i></a>
+                  </div>
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-3 col-xs-6">
+                  <!-- small box -->
+                  <div class="small-box bg-yellow">
+                    <div class="inner">
+                      <div style='text-align:left'><h2>Complaint<br>System</h2>
+
+                      </div>
+
+
+                    </div>
+                    <div class="icon">
+                      <i class="ion ion-flag"></i>
+                    </div>
+                    <a href="#" class="small-box-footer">Book a Complaint <i class="fa fa-arrow-circle-right"></i></a>
+                  </div>
+                </div>
+
+                <!-- ./col -->
+                <div class="col-lg-3 col-xs-6">
+                  <!-- small box -->
+                  <div class="small-box bg-red">
+                    <div class="inner">
+                      <div style='text-align:left'><h2>Visitor<br>System</h2>
+
+                      </div>
+                    </div>
+                    <div class="icon">
+                      <i class="ion ion-person-stalker"></i>
+                    </div>
+                    <a href="#" class="small-box-footer">Add Visitors <i class="fa fa-arrow-circle-right"></i></a>
+                  </div>
+                </div>
+                <!-- ./col -->
+              </div>
+              <!--./row-->
+          </section>
 
       </div>
 
