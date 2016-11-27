@@ -58,7 +58,7 @@ desired effect
   <header class="main-header">
 
     <!-- Logo -->
-    <a href="index2.html" class="logo">
+    <a href="<?php echo base_url(); ?>" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>C</b>Mo</span>
       <!-- logo for regular state and mobile devices -->
@@ -140,6 +140,7 @@ desired effect
       <ul class="sidebar-menu">
         <li class="header">Panel</li>
         <!-- Optionally, you can add icons to the links -->
+        <li><a href="<?php echo base_url().'index.php';?>"><i class="fa fa-link"></i> <span>Home</span></a></li>
         <li class="treeview">
           <a href="#"><i class="fa fa-link"></i> <span>Complaint</span>
             <span class="pull-right-container">

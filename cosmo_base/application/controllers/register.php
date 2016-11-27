@@ -41,8 +41,8 @@ class Register extends CI_Controller
 
             if($result == 0)
             {
-                $this->session->set_flashdata('msg','<div class="alert alert-danger text-center">Registered</div>');
-                $this->load->view('user/register_view');
+                $data['error']="Registered";
+                $this->load->view('user/register_view',$data);
             }
 
           }

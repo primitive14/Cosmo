@@ -67,7 +67,10 @@
 
 </div>
 <?php echo form_close(); ?>
-<?php echo $this->session->flashdata('msg'); ?>
+<?php
+  if(isset($error))
+  echo $error;
+ ?>
 
 <br>
 <!--

@@ -22,7 +22,7 @@
       <?php foreach ($service as $service_item): ?>
                 <!-- timeline time label -->
               <?php echo '<li class="item">';?>
-              <?php echo '<a href="'?><?php echo base_url().'index.php/news/viewEService/'.$service_item['s_id'];?><?php echo '" class="product-title">'?><?php echo $service_item['s_id']; ?>
+              <?php echo '<a href="'?><?php echo base_url().'index.php/service/viewComplaint/'.$service_item['s_id'];?><?php echo '" class="product-title">'?><?php echo $service_item['s_id']; ?>
                 <?php echo'<span class="label label-success pull-right">';?> <?php echo $service_item['date']; ?><?php echo'</span></a>';?>
               <?php echo '</li>'; ?>
                 <?php endforeach; ?>

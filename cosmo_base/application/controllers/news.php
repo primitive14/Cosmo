@@ -56,11 +56,11 @@ class News extends CI_Controller
 
           if($result)
           {
-            $this->session->set_flashdata('msg', '<div class="alert alert-danger text-center">News Created</div>');
-            $this->load->view('module/news_create_view');
+            $data['error']="News Created";
+            $this->load->view('module/news_create_view',$data);
           }else{
-            $this->session->set_flashdata('msg', '<div class="alert alert-danger text-center">Posting Failed</div>');
-            $this->load->view('module/news_create_view');
+            $data['error']="News Creation Failed";
+            $this->load->view('module/news_create_view',$data);
           }
         }
         else{
