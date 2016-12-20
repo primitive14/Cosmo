@@ -54,18 +54,18 @@
                     <textarea class="textarea" id="news" name="news" placeholder="Place some text here" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
                     <span class="text-danger"><?php echo form_error('news'); ?></span>
                 </div>
+                <div style="padding-left:45%">
+                  <button id="btn_news" name="btn_news" type="submit" class="btn btn-primary" value="News">Create News</button>
+                </div>
               </div>
             </div>
             <!-- /.col-->
           </div>
           <!-- ./row -->
+
         </section>
         <!-- /.content -->
-        <div style="padding-left:45%">
 
-          <button id="btn_news" name="btn_news" type="submit" class="btn btn-primary" value="News">Submit</button>
-
-</div>
 <?php echo form_close(); ?>
 <?php
   if(isset($error))

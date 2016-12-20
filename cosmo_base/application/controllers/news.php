@@ -86,10 +86,10 @@ class News extends CI_Controller
 
         if($result)
         {
-          $this->session->set_flashdata('msg','News Updated');
+          $this->session->set_flashdata('msg','<p><font size="2" color="blue">News Updated</font></p>');
           redirect('news/viewNews/'.$n_id);
         }else{
-          $this->session->set_flashdata('msg','News Update Failed');
+          $this->session->set_flashdata('msg','<p><font size="2" color="red">News Update Failed</font></p>');
           redirect('news/viewNews/'.$n_id);
         }
       }else {

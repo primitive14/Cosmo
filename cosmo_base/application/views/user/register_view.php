@@ -82,6 +82,12 @@
         <div class="col-xs-4">
           <button id="btn_register" name="btn_register" Value="Register" type="submit" class="btn btn-primary btn-block btn-flat">Register</button>
         </div>
+        <div>
+        
+        <div class="col-xs-8">
+          <a href="<?php echo base_url().'index.php/admin';?>" class="btn btn-default">Go Back</a>
+        </div>
+      </div>
         <!-- /.col -->
       </div>
       <?php echo form_close(); ?>

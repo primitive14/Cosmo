@@ -77,7 +77,7 @@
      /.social-auth-links -->
 
     <!--<a href="#">I forgot my password</a><br> -->
-    <a href="" class="text-center"><u>Register <u> </a>
+    
 
   </div>
   <!-- /.login-box-body -->

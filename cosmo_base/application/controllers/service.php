@@ -33,10 +33,10 @@ class service extends CI_Controller
 
            if($result)
            {
-             $this->session->set_flashdata('msg','service Logged');
+             $this->session->set_flashdata('msg','<p><font size="2" color="blue">Service Logged</font></p>');
              $this->load->view('module/service_view');
            }else{
-           $this->session->set_flashdata('msg','service logging Failed');
+           $this->session->set_flashdata('msg','<p><font size="2" color="red">service logging Failed</font></p>');
            $this->load->view('module/service_view');
             }
         }
@@ -68,13 +68,13 @@ class service extends CI_Controller
 
             if($result)
             {
-              $this->session->set_flashdata('msg','Service Request Updated');
+              $this->session->set_flashdata('msg','<p><font size="2" color="blue">Service Updated</font>');
               redirect('service/viewComplaint/'.$s_id);
             }
           }
           else
           {
-            $this->session->set_flashdata('msg','Service Request Update Failed');
+            $this->session->set_flashdata('msg','<p><font size="2" color="red">Service Request Update Failed</font>');
             redirect('service/viewComplaint/'.$s_id);
           }
         }
@@ -126,18 +126,18 @@ class service extends CI_Controller
         $data['service_user_list']=$result;
         $this->load->view('module/service_user_list',$data);
       }else {
-        $data['complaint_user_list']='No Service Logged For the Moment';
+        $data['service_user_list']='No Service Logged For the Moment';
         $this->load->view('module/service_user_list',$data);
       }
     }else {
       redirect('login/index');
     }
   }
-    public function viewComplaintUser($c_id = NULL)
+    public function viewComplaintUser($s_id = NULL)
     {
       if($this->auth->check_login())
       {
-        $result = $this->service_model->viewComplaint($c_id);
+        $result = $this->service_model->viewService($s_id);
         if($result)
         {
           $data['service_detail']=$result;

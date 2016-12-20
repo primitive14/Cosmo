@@ -45,10 +45,14 @@
               <div class="col-xs-4">
                 <button type="submit" id="btn_complaint" name="btn_complaint" class="btn btn-primary btn-block btn-flat" value="Complaint">Submit</button>
               </div>
+              <div class="col-xs-4">
+                <?php echo $this->session->flashdata('msg'); ?>
+              </div>
+
               <!-- /.col -->
             </div>
             <?php echo form_close(); ?>
-           <?php echo $this->session->flashdata('msg'); ?>
+
 
 
         </div>

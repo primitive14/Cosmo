@@ -26,7 +26,11 @@
       <!-- Default box -->
       <div class="box">
         <div class="box-header with-border">
-
+          <div class="form-group">
+            <label>News ID</label>
+            <input class="form-control" id="n_id" name="n_id" value="<?php echo $vn['n_id']; ?>" type="text"/>
+              <span class="text-danger"><?php echo form_error('n_id'); ?></span>
+          </div>
           <div class="form-group">
             <label>Heading</label>
             <input class="form-control" id="title" name="title" value="<?php echo $vn['title']; ?>" type="text"/>
@@ -54,6 +58,20 @@
                     <textarea class="textarea" id="news" name="news" value="" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"><?php echo $vn['news']; ?></textarea>
                     <span class="text-danger"><?php echo form_error('news'); ?></span>
                 </div>
+                <div style="padding-left:45%">
+                  <button id="btn_news" name="btn_news" type="submit" class="btn btn-primary" value="Update">Edit News</button>
+                </div>
+                <div style="padding-left:45%">
+                  <?php
+                    if(isset($error))
+                    echo $error;
+                    if(isset($this->session->msg))
+                    {
+                      echo $this->session->msg;
+                    }
+                   ?>
+                  <br>
+                </div>
               </div>
             </div>
             <!-- /.col-->
@@ -61,18 +79,9 @@
           <!-- ./row -->
         </section>
         <!-- /.content -->
-        <div style="padding-left:45%">
 
-          <button id="btn_news" name="btn_news" type="submit" class="btn btn-primary" value="Update">Submit</button>
-
-</div>
 <?php echo form_close(); ?>
-<?php
-  if(isset($error))
-  echo $error;
- ?>
 
-<br>
 <!--
       <div class="box-body">
           Start creating your amazing application!

@@ -59,8 +59,8 @@ class Complaint_model extends CI_Model
   }
   function get_complaint_user($h_no)
   {
-    $status=0;
-    $query = $this->db->get_where('complaint',array('status' => $status, 'h_no' => $h_no));
+
+    $query = $this->db->get_where('complaint',array('h_no' => $h_no));
     return $query->result_array();
   }
 }

@@ -3,7 +3,7 @@
 <head>
      <meta charset="utf-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Register Form</title>
+     <title>Service Update Form</title>
      <!--link the bootstrap css file-->
      <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
 
@@ -76,12 +76,19 @@
 
                <div class="form-group">
                <div class="col-lg-12 col-sm-12 text-center">
-                    <input id="btn_Uservice" name="btn_Uservice" type="submit" class="btn btn-default" value="Service" />
+                    <button id="btn_Uservice" name="btn_Uservice" type="submit" class="btn btn-primary" value="Service">Update</button>
                </div>
+               <div class="form-group">
+                 <div class="col-lg-12 col-sm-12 text-center">
+                   <?php echo $this->session->flashdata('msg'); ?>
+                 </div>
+               </div>
+               <div class="col-xs-8">
+                 <a href="<?php echo base_url().'index.php/admin';?>" class="btn btn-default">Go Back</a>
                </div>
           </fieldset>
           <?php echo form_close(); ?>
-          <?php echo $this->session->flashdata('msg'); ?>
+
           </div>
      </div>
 </div>

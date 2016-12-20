@@ -39,7 +39,7 @@
                     <div class="icon">
                       <i class="ion ion-chatbubble-working"></i>
                     </div>
-                    <a href="#" class="small-box-footer">Book a Service <i class="fa fa-arrow-circle-right"></i></a>
+                    <a href="<?php echo base_url().'index.php/service/createTicket'; ?>" class="small-box-footer">Book a Service <i class="fa fa-arrow-circle-right"></i></a>
                   </div>
                 </div>
                 <!-- ./col -->
@@ -56,7 +56,7 @@
                     <div class="icon">
                       <i class="ion ion-flag"></i>
                     </div>
-                    <a href="#" class="small-box-footer">Book a Complaint <i class="fa fa-arrow-circle-right"></i></a>
+                    <a href="<?php echo base_url().'index.php/complaint/createTicket';?>" class="small-box-footer">Book a Complaint <i class="fa fa-arrow-circle-right"></i></a>
                   </div>
                 </div>
 

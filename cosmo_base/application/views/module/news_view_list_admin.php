@@ -22,7 +22,7 @@
       <?php foreach ($news as $news_item): ?>
                 <!-- timeline time label -->
               <?php echo '<li class="item">';?>
-              <?php echo '<a href="'?><?php echo base_url().'index.php/news/viewENews/'.$news_item['n_id'];?><?php echo '" class="product-title">'?><?php echo $news_item['title']; ?>
+              <?php echo '<a href="'?><?php echo '#'?><?php echo '" class="product-title">'?><?php echo $news_item['title']; ?>
 
                 <?php echo'<span class="label label-primary pull-right">';?> <?php echo $news_item['date']; ?><?php echo'</span></a>';?>
                 <?php echo '<span class="label pull-right"><a href="';?><?php echo base_url().'index.php/news/viewNews/'.$news_item['n_id'];?><?php echo'" jhclass="btn btn-default"><i class="fa fa-edit"></i> Edit</a></span>';?>

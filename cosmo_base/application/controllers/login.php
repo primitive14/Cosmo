@@ -54,7 +54,7 @@ class Login extends CI_Controller
                     }
                     else
                     {
-                         $this->session->set_flashdata('msg', '<div class="alert alert-danger text-center">Invalid username and password!</div>');
+                         $this->session->set_flashdata('msg', '<p><font size="2" color="red">Invalid Username And Password</font></p>');
                          redirect('login/index');
                     }
                }

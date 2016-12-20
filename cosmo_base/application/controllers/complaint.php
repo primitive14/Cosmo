@@ -49,10 +49,10 @@ class Complaint extends CI_Controller
 
            if($result)
            {
-             $this->session->set_flashdata('msg','Complaint Logged');
+             $this->session->set_flashdata('msg','<p><font size="2" color="blue">Complaint Logged</font></p>');
              $this->load->view('module/complaint_view');
            }else{
-           $this->session->set_flashdata('msg','Complaint logging Failed');
+           $this->session->set_flashdata('msg','<p><font size="2" color="red">Complaint logging Failed</font></p>');
            $this->load->view('module/complaint_view');
             }
         }
@@ -85,13 +85,13 @@ class Complaint extends CI_Controller
 
             if($result)
             {
-              $this->session->set_flashdata('msg','Complaint Updated');
+              $this->session->set_flashdata('msg','<p><font size="2" color="blue">Complaint Updated</font>');
               redirect('complaint/viewComplaint/'.$c_id);
             }
           }
           else
           {
-            $this->session->set_flashdata('msg','Complaint Update Failed');
+            $this->session->set_flashdata('msg','<p><font size="2" color="red">Complaint Update Failed</font>');
             redirect('complaint/viewComplaint/'.$c_id);
           }
         }
@@ -131,7 +131,7 @@ class Complaint extends CI_Controller
       echo "error No Complaints to Display";
     }
   }
-  
+
   public function viewComplaintUserList()
   {
     if($this->auth->check_login())
